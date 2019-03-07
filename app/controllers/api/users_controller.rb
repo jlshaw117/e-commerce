@@ -4,7 +4,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            render json: 'success'
+            login(@user)
+            render 'api/users/show'
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -14,7 +15,7 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
 
         if @user
-            render json: @user
+            render 'api/users/show'
         else
             render json: ["Unautherized access"], status: 401
         end
