@@ -1,0 +1,46 @@
+import * as SessionAPIUtil from '../util/session_api_util';
+
+export const login = user => {
+    return SessionAPIUtil.login(user)
+    .then(user => dispatch(recieveUser(user)),
+    (err) => dispatch(recieveErrors(err.responseJSON)));
+};
+
+export const signup = user => {
+    return SessionAPIUtil.signup(user)
+    .then(user => dispatch(recieveUser(user)),
+    (err) => dispatch(recieveErrors(err.responseJSON)));
+};
+
+export const logout = () => {
+    return SessionAPIUtil.logout()
+    .then(() => dispatch(logoutUser()),
+    (err) => dispatch(recieveErrors(err.responseJSON)));
+};
+
+export const RECIEVE_USER = 'RECIEVE_USER';
+export const RECIEVE_SESSION_ERRORS = 'RECIEVE_ERRORS';
+export const LOGOUT_USER = 'LOGOUT_USER';
+
+const recieveUser = (user) => {
+
+    return ({
+        type: RECIEVE_USER,
+        user: user
+    });
+};
+
+const recieveErrors = (errors) => {
+
+    return ({
+        type: RECIEVE_SESSION_ERRORS,
+        errors: errors
+    });
+};
+
+const logoutUser = () => {
+
+    return ({
+        type: LOGOUT_USER
+    });
+};
