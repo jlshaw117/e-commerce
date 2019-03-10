@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
             return (
                 <div className='confirm-password'>
                     <input 
-                        type="text"
+                        type="password"
                         placeholder='Confirm Password'
                         value={this.state.password2}
                         onChange={this.update('password2')}
@@ -78,19 +78,20 @@ class SessionForm extends React.Component {
 
                 <form onSubmit={this.handleSubmit}>
                     {this.props.formType === 'Sign Up' ? nameInput() : <div></div>}
-                    <input type="text"
+                    <input type="email"
                         placeholder='Email'
                         value={this.state.email}
                         onChange={this.update('email')}
                         required
                     />
-                    <input type="text"
+                    <input type="password"
                         placeholder='Password'
                         value={this.state.password}
                         onChange={this.update('password')}
                         required
                     />
                     {this.props.formType === 'Sign Up' ? confirmPassword() : <div></div>}
+                    <button type='submit'>{this.props.formType}</button>
                 </form>
             </div>
         )
