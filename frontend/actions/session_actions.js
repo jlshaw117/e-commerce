@@ -22,6 +22,14 @@ export const RECIEVE_USER = 'RECIEVE_USER';
 export const RECIEVE_SESSION_ERRORS = 'RECIEVE_SESSION_ERRORS';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
+export const clearErrors = () => {
+
+    return ({
+        type: RECIEVE_SESSION_ERRORS,
+        errors: []
+    });
+};
+
 const recieveUser = (user) => {
 
     return ({
