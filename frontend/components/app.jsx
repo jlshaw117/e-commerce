@@ -3,6 +3,8 @@ import HeaderContainer from './header/header_container';
 import { Route } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_container';
 import SignUpFormContainer from './session_form/signup_container';
+import { AuthRoute, ProtectedRoute} from '../util/route_utils';
+import Splash from './splash/splash';
 
 export default () => {
     return (
@@ -10,8 +12,9 @@ export default () => {
             <HeaderContainer/>
             <h1>React Is Working!!!</h1>
 
-            <Route exact path='/login' component={LoginFormContainer}/>
-            <Route exact path='/signup' component={SignUpFormContainer}/>
+            <Route exact path='/' component={Splash} />
+            <AuthRoute path='/login' component={LoginFormContainer}/>
+            <AuthRoute path='/signup' component={SignUpFormContainer}/>
         </div>
     )
 };
