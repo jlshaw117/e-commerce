@@ -11,8 +11,6 @@ export default () => {
     return (
         <div>
             <HeaderContainer/>
-            <h1>React Is Working!!!</h1>
-
             <Route exact path='/' component={Splash} />
             <AuthRoute path='/login' component={LoginFormContainer}/>
             <AuthRoute path='/signup' component={SignUpFormContainer}/>

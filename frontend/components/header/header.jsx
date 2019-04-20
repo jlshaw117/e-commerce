@@ -1,19 +1,38 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-export default ({currentUser, logout}) => {
+class Header extends React.Component {
 
-    if (currentUser) {
+   render () {
+
+        const sessionLinks = () => {
+            
+            return (
+                <ul>
+                    <li><Link to='login'>Login</Link></li>
+                    <li><Link to='signup'>Signup</Link></li>
+                </ul>
+            )
+        };
+
+        const welcomeLinks = () => {
+
+            return (
+                <span>Welcome {this.props.currentUser.f_name}</span>
+            )
+        };
+
         return (
-            <div>
-                <h1>Hello {currentUser.f_name}</h1>
-                <button className='logout-button' onClick={logout}>Logout</button>
-            </div>
+            <header>
+                <div className='logo-link'>
+                    <Link to='/'>Side Hustle</Link>
+                </div>
+                <nav>
+                    {this.props.currentUser ? welcomeLinks() : sessionLinks()}
+                </nav>
+            </header>
         )
-    } else {
-        return (
-            <div>
-                <h1>Please Login or Signup</h1>
-            </div>
-        )
-    }
+   }
 }
+
+export default Header;
