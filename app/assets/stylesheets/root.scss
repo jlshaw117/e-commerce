@@ -9,7 +9,9 @@ li {
 
 #root {
     min-width: 1020px;
+    height: 100%;
     #inner-wrapper {
         max-width: 1020px;
+        margin: 0 auto;
     }
 }
