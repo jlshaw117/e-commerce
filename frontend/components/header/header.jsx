@@ -18,7 +18,10 @@ class Header extends React.Component {
         const welcomeLinks = () => {
 
             return (
-                <span>Welcome {this.props.currentUser.f_name}</span>
+                <ul>
+                    <li>Welcome {this.props.currentUser.f_name}</li>
+                    <li><button onClick={this.props.logout}>Logout</button></li>
+                </ul>
             )
         };
 
