@@ -27,12 +27,14 @@ class Header extends React.Component {
 
         return (
             <header>
-                <div className='logo-link'>
-                    <Link to='/'>Side Hustle</Link>
+                <div className='header-inner-wrapper'>
+                    <div className='logo-link'>
+                        <Link to='/'>Side Hustle</Link>
+                    </div>
+                    <nav>
+                        {this.props.currentUser ? welcomeLinks() : sessionLinks()}
+                    </nav>
                 </div>
-                <nav>
-                    {this.props.currentUser ? welcomeLinks() : sessionLinks()}
-                </nav>
             </header>
         )
    }
