@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+#root {
+    min-width: 1020px;
+    #inner-wrapper {
+        max-width: 1020px;
+    }
+}
