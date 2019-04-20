@@ -1,16 +1,30 @@
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
 li {
     list-style: none;
 }
 
+body {
+    margin: 0;
+}
+
+button {
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
 #root {
     min-width: 1020px;
     height: 100%;
     #inner-wrapper {
+        padding-top: 50px;
         max-width: 1020px;
         margin: 0 auto;
     }
