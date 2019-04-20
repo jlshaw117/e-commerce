@@ -1,0 +1,38 @@
+header {
+    z-index: 10;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: #054a79;
+    color: white;
+    border: 1px solid black;
+
+    
+
+    .header-inner-wrapper {
+        width: 1020px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-link {
+
+        }
+
+        nav {
+
+            ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                li {
+                    padding: 5px;
+                    background:black;
+                    margin: 5px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
