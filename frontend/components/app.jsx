@@ -11,10 +11,12 @@ export default () => {
     return (
         <div>
             <HeaderContainer/>
-            <Route exact path='/' component={Splash} />
-            <AuthRoute path='/login' component={LoginFormContainer}/>
-            <AuthRoute path='/signup' component={SignUpFormContainer}/>
-            <ProtectedRoute path='/home' component={HomeContainer} />
+            <div id='inner-wrapper'>
+                <Route exact path='/' component={Splash} />
+                <AuthRoute path='/login' component={LoginFormContainer}/>
+                <AuthRoute path='/signup' component={SignUpFormContainer}/>
+                <ProtectedRoute path='/home' component={HomeContainer} />
+            </div>
         </div>
     )
 };
