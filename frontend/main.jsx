@@ -7,7 +7,7 @@ import {login, signup, logout} from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    const root = document.getElementById('inner-wrapper');
+    const root = document.getElementById('root');
     let store;
     if (window.currentUser) {
         let preLoadedState = {
