@@ -19,7 +19,7 @@ class Header extends React.Component {
 
             return (
                 <ul>
-                    {/* <li>Welcome {this.props.currentUser.f_name}</li> */}
+                    <li><Link to='/home'>Home</Link></li>
                     <li><button onClick={this.props.logout}>Logout</button></li>
                 </ul>
             )
