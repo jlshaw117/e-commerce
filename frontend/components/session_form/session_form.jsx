@@ -29,7 +29,11 @@ class SessionForm extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-        this.props.action(this.state);
+        if (this.props.formType === 'Sign Up' && this.state.password !== this.state.password2) {
+            this.props.recieveErrors(['Passwords do not match']);
+        } else {
+            this.props.action(this.state);
+        }
     }
 
     componentWillUnmount () {
@@ -37,6 +41,12 @@ class SessionForm extends React.Component {
     }
 
     render() {
+
+        const renderErrors = () => {
+            return (
+                <span>{this.props.errors[0]}</span>
+            )
+        };
 
         const nameInput = () => {
             return (
@@ -75,8 +85,9 @@ class SessionForm extends React.Component {
 
         return (
             <div className='session-form-wrapper'>
-
                 <form onSubmit={this.handleSubmit}>
+                    <h2>{this.props.formType}</h2>
+                    {this.props.errors.length ? renderErrors() : <div></div> }
                     {this.props.formType === 'Sign Up' ? nameInput() : <div></div>}
                     <input type="email"
                         placeholder='Email'
