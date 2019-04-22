@@ -38,7 +38,7 @@ const recieveUser = (user) => {
     });
 };
 
-const recieveErrors = (errors) => {
+export const recieveErrors = (errors) => {
 
     return ({
         type: RECIEVE_SESSION_ERRORS,
